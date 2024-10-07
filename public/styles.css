@@ -158,3 +158,51 @@ html, body {
     border: 1px solid black;
     padding: 10px 15px;
 }
+
+/* Register form */
+
+.register-form {
+    z-index: 1;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 350px;
+    height: 500px;
+    font-size: 16px;
+    opacity: 0;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+    pointer-events: none;
+}
+
+.register-form.active {
+    top: 50%;
+    opacity: 1;
+    transition: top 0ms ease-in-out00ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.register-form button {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(26, 25, 25);
+    color: white;
+    width: 100%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.register-form button:hover {
+    opacity: 0.9;
+    transform: scale(0.9);
+    box-shadow: 3px 5px rgb(197, 197, 197);
+}
