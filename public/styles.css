@@ -4,6 +4,23 @@ html, body {
     height: 100%;
     width: 100%;
 }
+header{
+    background-color: #50341f;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
 
 .parent {
     display: grid;
@@ -75,6 +92,11 @@ html, body {
     background-position: bottom;
 }
 
+nav ul li button {
+    margin: 1em 1em;
+    padding: 10px 25px;
+    font-size: 15px;
+}
 
 /* Pop up login */
 
