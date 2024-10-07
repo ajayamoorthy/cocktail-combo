@@ -74,4 +74,45 @@ html, body {
     background-position: bottom;
 }
 
+@media only screen and (max-width: 600px) {
+    
+    .parent {
+        grid-template-columns: 1fr;
+    }
+    
+    .div2, .div4 {
+        display: none;
+    }
 
+    .div3 {
+        grid-area: 2 / 1 / 4 / 2;
+        position: relative;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+
+    .parent {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .div2 {
+        grid-area: 2 / 1 / 4 / 2;
+    }
+
+    .div3 {
+        grid-area: 2 / 2 / 4 / 2;
+    }
+
+    .div2, .div3 {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .div4 {
+        display: none;
+    }
+}
