@@ -4,6 +4,30 @@ html, body {
     height: 100%;
     width: 100%;
 }
+header{
+    background-color: #50341f;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li h1 {
+    font-size: 350%;
+    padding: 10px;
+    margin: 0;
+    color: #f5e5c6da;
+}
 
 .parent {
     display: grid;
@@ -64,6 +88,7 @@ html, body {
 }
 
 .barstools {
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
@@ -74,45 +99,3 @@ html, body {
     background-position: bottom;
 }
 
-@media only screen and (max-width: 600px) {
-    
-    .parent {
-        grid-template-columns: 1fr;
-    }
-    
-    .div2, .div4 {
-        display: none;
-    }
-
-    .div3 {
-        grid-area: 2 / 1 / 4 / 2;
-        position: relative;
-        width: 100%;
-    }
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 900px) {
-
-    .parent {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .div2 {
-        grid-area: 2 / 1 / 4 / 2;
-    }
-
-    .div3 {
-        grid-area: 2 / 2 / 4 / 2;
-    }
-
-    .div2, .div3 {
-        display: block;
-        position: relative;
-        width: 100%;
-    }
-
-    .div4 {
-        display: none;
-    }
-}
