@@ -13,13 +13,20 @@ nav ul {
     margin: 0;
 }
 
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
 nav ul li {
     list-style: none;
 }
 
-nav ul {
-    display: flex;
-    justify-content: space-between;
+nav ul li h1 {
+    font-size: 350%;
+    padding: 10px;
+    margin: 0;
+    color: #f5e5c6da;
 }
 
 .parent {
