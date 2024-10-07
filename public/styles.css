@@ -4,16 +4,14 @@ html, body {
     height: 100%;
     width: 100%;
 }
-header{
+
+header {
     background-color: #50341f;
 }
 
 nav ul {
     padding: 0;
     margin: 0;
-}
-
-nav ul {
     display: flex;
     justify-content: space-between;
 }
@@ -29,6 +27,12 @@ nav ul li h1 {
     color: #f5e5c6da;
 }
 
+nav ul li button {
+    margin: 1em 1em;
+    padding: 10px 25px;
+    font-size: 15px;
+}
+
 .parent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -38,7 +42,7 @@ nav ul li h1 {
     height: 100vh;
     width: 100vw;
 }
-    
+
 .div1 { 
     grid-area: 1 / 1 / 2 / 4; 
     background-color: #50341f;
@@ -48,22 +52,19 @@ nav ul li h1 {
     background-image: url(./assets/brown-stone-modern-pattern-brick.jpg);
     background-position: left;
     background-size: cover;
+    position: relative;
 }
 
 .div2 { 
-    grid-area: 2 / 1 / 4 / 2; 
-    position: relative;
-    
+    grid-area: 2 / 1 / 4 / 2;
 }
 
 .div3 { 
-    grid-area: 2 / 2 / 4 / 3; 
-    position: relative;
+    grid-area: 2 / 2 / 4 / 3;
 }
 
 .div4 { 
     grid-area: 2 / 3 / 4 / 4;
-    position: relative;
 }
 
 .arch {
@@ -78,7 +79,7 @@ nav ul li h1 {
 }
 
 .div5 { 
-    grid-area: 4 / 1 / 5 / 4; 
+    grid-area: 4 / 1 / 5 / 4;
     background-color: #f2dfb7;
 }
 
@@ -99,3 +100,107 @@ nav ul li h1 {
     background-position: bottom;
 }
 
+/* Pop up login form */
+.form, .register-form {
+    z-index: 1;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 350px;
+    height: 500px;
+    font-size: 16px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+    pointer-events: none;
+}
+
+.form.active, .register-form.active {
+    top: 50%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.form button, .register-form button {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(26, 25, 25);
+    color: white;
+    width: 100%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.form button:hover, .register-form button:hover {
+    opacity: 0.9;
+    transform: scale(0.9);
+    box-shadow: 3px 5px rgb(197, 197, 197);
+}
+
+.form-attribute {
+    padding: 10px;
+}
+
+.form-attribute input[type="text"], input[type="password"] {
+    display: block;
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px 15px;
+}
+
+.popup {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.close-button {
+    position: absolute;
+    top: -85px;
+    right: 10px;
+    color: black;
+    z-index: 2;
+    border-radius: 15px;
+    line-height: 15px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .parent {
+        grid-template-columns: 1fr;
+    }
+    .div2, .div4 {
+        display: none;
+    }
+    .div3 {
+        grid-area: 2 / 1 / 4 / 2;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    .parent {
+        grid-template-columns: 1fr 1fr;
+    }
+    .div2 {
+        grid-area: 2 / 1 / 4 / 2;
+    }
+    .div3 {
+        grid-area: 2 / 2 / 4 / 2;
+    }
+    .div4 {
+        display: none;
+    }
+}
