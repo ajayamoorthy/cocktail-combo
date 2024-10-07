@@ -64,6 +64,7 @@ html, body {
 }
 
 .barstools {
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
@@ -75,3 +76,85 @@ html, body {
 }
 
 
+/* Pop up login */
+
+
+.form {
+    z-index: 1;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 350px;
+    height: 500px;
+    font-size: 16px;
+    opacity: 0;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+    pointer-events: none;
+}
+
+.form.active {
+    top: 50%;
+    opacity: 1;
+    transition: top 0ms ease-in-out00ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.form button {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(26, 25, 25);
+    color: white;
+    width: 100%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.form button:hover {
+    opacity: 0.9;
+    transform: scale(0.9);
+    box-shadow: 3px 5px rgb(197, 197, 197);
+}
+
+.popup {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.close-button {
+    position: absolute;
+    top: -85px;
+    right: 10px;
+    color: black;
+    z-index: 2;
+    border-radius: 15px;
+    line-height: 15px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.form-attribute {
+    padding: 10px;
+}
+
+.form-attribute input[type="text"], input[type="password"] {
+    display: block;
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px 15px;
+}
