@@ -1,87 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>CocktailCombo</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="js/login.js"></script>
-    <!-- Keep this one -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <!-- Import Materialize CSS -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-      rel="stylesheet"
-    />
-    <!-- Import Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <link rel="stylesheet" href="css/main.css" /> -->
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-  </head>
-  <body>
-    <div id="loginSection">
-      <form id="loginForm" class="input-field">
-        <div class="input-field">
-          <label for="login-username" id="loginLabel">Username</label>
-          <input
-            type="text"
-            id="login-username"
-            name="username"
-            class="validate"
-            required
-          />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="parent">
+        <div class="div1"> 
+            <h1> cocktail combo </h1>
         </div>
-        <div class="input-field">
-          <label for="login-password" id="loginLabel">Password</label>
-          <input
-            type="password"
-            id="login-password"
-            name="password"
-            class="validate"
-            required
-          />
+        <div class="div2"> 
+            <div class="arch"></div>
         </div>
-        <button type="submit" class="btn waves-effect waves-light">
-          Login
-        </button>
-      </form>
 
-      <!-- Google Login Button -->
-      <div id="googleLog" class="row">
-        <a href="/auth/google" id="google-login-btn" class="google-btn">
-          <i class="fab fa-google"></i> Sign in with Google
-        </a>
-      </div>
+        <div class="div3"> 
 
-      <div class="regButtonDiv row">
-        <p>Don't have an account?</p>
-        <button id="showRegister" class="btn">Register</button>
-      </div>
+            <div class="main-form">
+                <h3>What can I get you?</h3>
+                <form id="cocktail-request">
 
-      <div id="registerSection" style="display: none">
-        <h1 id="registerText">Register</h1>
-        <form id="registerForm" class="form-group">
-          <div class="input-field">
-            <label for="reg-username" id="loginLabel">Username</label>
-            <input type="text" id="reg-username" name="username" required />
-          </div>
-          <div class="input-field">
-            <label for="reg-password" id="loginLabel">Password</label>
-            <!-- <div class="password-container"> -->
-            <input type="password" id="reg-password" name="password" required />
-            <!-- </div> -->
-          </div>
-          <button type="submit" class="btn">Register</button>
-        </form>
-      </div>
+                    <div class="custom-select">
+                        <label for="liquors">Alcohol:</label>
+                        <select id="alcohol" name="alcohol">
+                            <option value="" disabled selected>Select One</option>
+                            <option value="vodka">Vodka</option>
+                            <option value="tequila">Tequila</option>
+                            <option value="light-rum">Light Rum</option>
+                            <option value="dark-rum">Dark Rum</option>
+                            <option value="bourbon">Bourbon</option>
+                            <option value="scotch">Scotch</option>
+                            <option value="gin">Gin</option>
+                            <option value="whiskey">Whiskey</option>
+                            <option value="brandy">Brandy</option>
+                            <option value="triple-sec">Triple Sec</option>
+                        </select>
+                    </div>
+
+                    <div class="floating-label">
+                        <input type="text" id="ingredient-1" name="ingredient-1" placeholder=" ">
+                        <label for="ingredient-1">Ingredient 1</label>
+                    </div> 
+
+                    <div class="floating-label">
+                        <input type="text" id="ingredient-2" name="ingredient-2" placeholder=" ">
+                        <label for="ingredient-2">Ingredient 2</label>
+                    </div>
+
+                    <div class="floating-label">
+                        <input type="text" id="ingredient-3" name="ingredient-3" placeholder=" ">
+                        <label for="ingredient-3">Ingredient 3</label>
+                    </div>
+
+                    <button id="get-drink">Get Drink</button>
+
+                </form>
+            </div>
+            
+            <div class="arch"></div>
+
+
+        </div>
+
+        <div class="div4"> 
+            <div class="arch"></div>
+        </div>
+        <div class="div5"> </div>
+        <div class="div6">
+            <div class="barstools"> 
+            </div>
+        </div>
     </div>
-  </body>
+
+    <script src="./main.js"></script>
+</body>
 </html>

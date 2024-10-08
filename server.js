@@ -1,13 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const session = require("express-session");
-const bcrypt = require("bcrypt");
-const path = require("path");
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const express = require( 'express' ),
+      port = 3000;
 
 const app = express();
-const port = 3000;
+app.use(express.static('public'));
 
 // MongoDB connection
 mongoose.connect(
@@ -311,5 +306,5 @@ app.get("/logout", (req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+    console.log(`Cocktail Combo listening on port ${port}`);
+})
