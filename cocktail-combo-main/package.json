@@ -1,0 +1,15 @@
+{
+  "name": "cocktail-combo",
+  "version": "1.0.0",
+  "description": "potential apis:\r - https://api.api-ninjas.com/v1/cocktail\r - https://www.thecocktaildb.com/api.php\r - https://github.com/lauriharpf/thecocktaildb-downloader/blob/master/thecocktaildb/src/generated/without-images/drinks.ts",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

@@ -1,0 +1,266 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.4fr repeat(2, 1fr) 0.3fr 1.2fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.main-form {
+    z-index: 2;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding: 1em;
+    background-color: antiquewhite;
+    border-radius: 4px;
+}
+
+.custom-select {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.custom-select label {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    color: #999;
+    pointer-events: none; /* prevents interaction with the label */
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    /*appearance: none; /* removes the default dropdown arrow in some browsers */
+    background: white; 
+}
+
+/* when focused, change border color */
+.custom-select select:focus {
+    border: 2px solid #726D2D; 
+}
+
+
+.floating-label {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.floating-label input {
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.floating-label label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    pointer-events: none; 
+    transition: 0.2s ease all; 
+    
+}
+
+/* animates the label moving */
+.floating-label input:focus ~ label,
+.floating-label input:not(:placeholder-shown) ~ label {
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    color: #726D2D; /* need to change this color */
+    transform: translateY(0);
+}
+
+/* when focused, change border color */
+.floating-label input:focus {
+    border: 2px solid #726D2D;
+}
+
+.floating-label input::placeholder {
+    color: transparent;
+}
+
+
+    
+.div1 { 
+    grid-area: 1 / 1 / 2 / 4; 
+    background-color: #50341f;
+}
+
+.div2, .div3, .div4 {
+    background-image: url(./assets/brown-stone-modern-pattern-brick.jpg);
+    background-position: left;
+    background-size: cover;
+}
+
+.div2 { 
+    grid-area: 2 / 1 / 4 / 2; 
+    position: relative;
+    
+}
+
+.div3 { 
+    grid-area: 2 / 2 / 4 / 3; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div4 { 
+    grid-area: 2 / 3 / 4 / 4;
+    position: relative;
+}
+
+.arch {
+    background-image: url(./assets/archUpdated.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.div5 { 
+    grid-area: 4 / 1 / 5 / 4; 
+    background-color: #f2dfb7;
+}
+
+.div6 { 
+    grid-area: 5 / 1 / 6 / 4; 
+    background-image: url(./assets/barfronttexture.png);
+}
+
+.barstools {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/barstools_correctheight.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    z-index: -1;
+}
+
+/* Nav header */
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-button {
+    background-color:#f5e5c6da;
+    margin: 1em 1em;
+    padding: 10px 25px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.nav-button:hover {
+    opacity: 0.9;
+    transform: scale(0.9);
+    box-shadow: 2px 6px #301c04c9;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li h1 {
+    font-size: 350%;
+    padding: 10px;
+    margin: 0;
+    color: #f5e5c6da;
+}
+
+
+nav ul li button {
+    margin: 1em 1em;
+    padding: 10px 25px;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .parent {
+        grid-template-columns: 1fr;
+    }
+    
+    .div2, .div4 {
+        display: none;
+    }
+
+    .div3 {
+        grid-area: 2 / 1 / 4 / 2;
+        position: relative;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+
+    .parent {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .div2 {
+        grid-area: 2 / 1 / 4 / 2;
+    }
+
+    .div3 {
+        grid-area: 2 / 2 / 4 / 2;
+    }
+
+    .div2, .div3 {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .div4 {
+        display: none;
+    }
+}
