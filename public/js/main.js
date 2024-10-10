@@ -1,3 +1,8 @@
+const drinksButton = document.getElementById("myDrinksButton");
+const loginButton = document.getElementById("login-register");
+const logoutButton = document.getElementById("logout");
+drinksButton.style.display = "none";
+
 const ingredients = [
   "151 proof rum",
   "7-Up",
@@ -220,6 +225,7 @@ const ingredients = [
   "Vanilla schnapps",
   "Vanilla vodka",
   "Vermouth",
+  "vodka",
   "Water",
   "Whipped cream",
   "Whiskey",
@@ -239,18 +245,28 @@ const ingredients = [
 
 let currentUser = null;
 
+
 // Fetch the logged-in user's information
 fetch("/getCurrentUser")
   .then((response) => response.json())
   .then((data) => {
     currentUser = data.username;
     console.log("Logged-in user:", currentUser);
+    drinksButton.style.display = "block";
+    logoutButton.style.display = "block";
+    loginButton.style.display = "none";
   })
   .catch((error) => console.error("Error fetching current user:", error));
 
-document.getElementById("myDrinksButton").addEventListener("click", () => {
+
+drinksButton.addEventListener("click", () => {
   window.location.href = "myPage.html";
 });
+
+loginButton.addEventListener("click", () => {
+  window.location.href = "login.html";
+});
+
 
 $(document).ready(function () {
   $(".ingredient-select").each(function () {
