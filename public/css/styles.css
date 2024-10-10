@@ -77,6 +77,8 @@ select {
 .div1 { 
   grid-area: 1 / 1 / 2 / 4; 
   background-color: #50341f;
+  display: flex;
+  justify-content: space-around;
 }
 
 .div2, .div3, .div4 {
@@ -134,6 +136,7 @@ select {
   background-image: url(./assets/barstools_correctheight.png);
   background-repeat: repeat-x;
   background-position: bottom;
+  z-index: -1;
 }
 
 @media only screen and (max-width: 600px) {
