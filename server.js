@@ -180,7 +180,7 @@ app.get("/", (req, res) => {
   if (req.isAuthenticated()) {
     return res.redirect("/home");
   }
-  res.sendFile(path.join(__dirname, "public/index.html"));
+  res.sendFile(path.join(__dirname, "public/home.html"));
 });
 
 app.get("/home", isLoggedIn, (req, res) => {
@@ -309,7 +309,7 @@ app.post("/searchCocktails", async (req, res) => {
 app.post("/addDrink", isLoggedIn, async (req, res) => {
   const { idDrink, strDrink } = req.body;
   try {
-    const user = await User.findById(req.user._id);
+    const user = await User.ffById(req.user._id);
     user.drinksList.push({ idDrink, strDrink });
     await user.save();
     res.json({ message: "Drink added to your list!" });
