@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -7,14 +7,14 @@ const path = require("path");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-
 const app = express();
 const port = 3000;
 
 // MongoDB connection
+// MongoDB connection
 mongoose
   .connect(
-    process.env.DATABASE_URL,
+    "mongodb+srv://azzhang3:eGPDbrMNzogUpygL@cluster0.iuxm8.mongodb.net/",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -190,7 +190,7 @@ app.get("/home", isLoggedIn, (req, res) => {
 });
 
 //route to serve cocktail results
-app.get('/cocktailResult', (req, res) => {  
+app.get("/cocktailResult", (req, res) => {
   res.sendFile(path.join(__dirname, "public/cocktailResult.html"));
 });
 
